@@ -7,7 +7,7 @@ Autor
 
 Jméno a příjmení: Tomáš Kopecký
 E-mail: kopecky4@spsejecna.cz
-Škola: (název školy)
+Škola: SPŠE Ječná
 
 
 Popis projektu
@@ -22,9 +22,7 @@ Aplikace umožňuje práci s databází, import dat, transakce a generování re
 Použité technologie
 
 Python 3.10+
-
 MySQL Server
-
 mysql-connector-python
 
 
@@ -45,19 +43,14 @@ autosalon/
 Požadavky na spuštění
 
 Nainstalovaný Python 3.10 nebo novější
-
 Nainstalovaný MySQL Server
-
 Přístup k příkazové řádce
-
 Instalace databáze
-
 Spusťte MySQL klienta
 
 Vytvořte databázi:
 
 CREATE DATABASE autosalon;
-
 
 Přepněte se do databáze:
 
@@ -68,21 +61,23 @@ Importujte databázi:
 
 SOURCE autosalon.sql;
 
+
 Konfigurace aplikace
 
 Otevřete soubor:
 
-config/config.ini
+/exe/config/config.ini
 
+a nastavte vaše přihlašovací údaje k databázi:
 
-a nastavte přihlašovací údaje k databázi:
-
+př:
 [database]
 host = localhost
 port = 3306
 user = root
-password = heslo
+password = 12345
 database = autosalon
+
 
 Instalace závislostí
 
@@ -90,53 +85,38 @@ V příkazové řádce spusťte:
 
 pip install mysql-connector-python
 
+
 Spuštění aplikace
 
-Aplikaci spustíte příkazem:
-
-python main.py
+/exe/autosalon.exe
 
 
 Po spuštění se zobrazí textové menu, pomocí kterého lze aplikaci ovládat.
 
 Funkce aplikace
-
 přidání, úprava a smazání zákazníka
-
 přidání, úprava a smazání automobilu
-
 přidání výbavy
-
 vytvoření objednávky (práce s více tabulkami)
-
 import dat z CSV a JSON
-
 generování souhrnného reportu
-
 ošetření chybových stavů
 
 
 Import dat
 
 Aplikace umožňuje import:
-
 zákazníků ze souboru CSV
-
 automobilů ze souboru JSON
-
 Importní soubory se nachází ve složce /data.
-
-
 Chybové stavy
+
 
 Aplikace ošetřuje:
 
 chybné připojení k databázi
-
 neexistující soubory
-
 neplatné vstupy uživatele
-
 chyby konfigurace
 
 Při chybě je uživatel informován pomocí chybové hlášky.
@@ -147,12 +127,5 @@ Testování
 Součástí projektu jsou tři testovací scénáře ve formátu PDF, které popisují:
 
 instalaci a spuštění aplikace
-
 běžnou práci s aplikací
-
 chybové stavy, import a reporty
-
-
-Závěr
-
-Projekt splňuje všechny požadavky zadání a je připraven k testování a odevzdání.

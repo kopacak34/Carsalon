@@ -20,22 +20,22 @@ class CarRepository:
         conn.close()
         return cars
 
-    class CarRepository:
 
-        def delete(self, car_id):
-            conn = get_connection()
-            cur = conn.cursor()
-            try:
-                cur.execute(
-                    "DELETE FROM car WHERE id = %s",
-                    (car_id,)
-                )
-                conn.commit()
-                return cur.rowcount > 0
-            except Exception as e:
-                conn.rollback()
-                print("Nelze smazat auto:", e)
-                return False
-            finally:
-                conn.close()
+
+    def delete(self, car_id):
+        conn = get_connection()
+        cur = conn.cursor()
+        try:
+            cur.execute(
+                "DELETE FROM car WHERE id = %s",
+                (car_id,)
+            )
+            conn.commit()
+            return cur.rowcount > 0
+        except Exception as e:
+            conn.rollback()
+            print("Nelze smazat auto:", e)
+            return False
+        finally:
+            conn.close()
 
